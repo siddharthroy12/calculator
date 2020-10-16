@@ -236,7 +236,7 @@ class Calculator extends React.Component {
                 <Display display={this.state.display}></Display>
                 <Buttons eventHandler={this.handleButtonClick}></Buttons>
             </div>
-            <p style={{textAlign:"center"}}>Coded and Designed by</p>
+            <p style={{textAlign:"center", marginTop:"10px"}}>Coded and Designed by</p>
             <p style={{textAlign:"center"}}>Siddharth Roy</p>
             </div>
         )
