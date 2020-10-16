@@ -1,3 +1,4 @@
+/*eslint-disable no-eval */
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -102,14 +103,14 @@ class Calculator extends React.Component {
                     prevEval: false
                 });
            }
-       } else if(this.state.display == "0") {
-           if (currentNumber == ".") {
+       } else if(this.state.display === "0") {
+           if (currentNumber === ".") {
                 this.setState({
                     display:"0.",
                     formula:"0."
                 });
            } else if (operator) {
-                if (operator == "-") {
+                if (operator === "-") {
                     this.setState({
                         display: operator,
                         formula: operator
@@ -134,7 +135,7 @@ class Calculator extends React.Component {
                     formula:currentNumber
                 });
            }    
-        } else if (currentNumber == ".") {
+        } else if (currentNumber === ".") {
             if ( !(this.state.display.includes(".")) ) {
                 this.setState((state) => ({
                     display: state.display + currentNumber,
@@ -151,7 +152,7 @@ class Calculator extends React.Component {
             });
         } else if (operator) {
             if (this.state.operator) {
-                if (operator == "-") {
+                if (operator === "-") {
                     this.setState( (state) => ({
                         prevOperator: true,
                         formula: state.formula + operator,
@@ -194,7 +195,7 @@ class Calculator extends React.Component {
         } else if (equal) {
             let evaluated = eval(this.state.formula);
             
-            if (this.state.formula == "") {
+            if (this.state.formula === "") {
                 this.setState({
                     display: "0",
                     formula: "0",
